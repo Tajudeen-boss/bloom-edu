@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Bloom Edu Montessori",
-  description: "Montessori training, materials, and textbooks in one integrated platform."
+  description: "Glassmorphism Montessori platform for training, materials, textbooks, and operations."
 };
 
 export default function RootLayout({
