@@ -1,4 +1,4 @@
-import postmark from "postmark";
+import { ServerClient } from "postmark";
 
 const token = process.env.POSTMARK_SERVER_TOKEN;
 
@@ -12,7 +12,7 @@ export async function sendTransactionalEmail(
     return;
   }
 
-  const client = new postmark.ServerClient(token);
+  const client = new ServerClient(token);
 
   await client.sendEmail({
     From: process.env.POSTMARK_FROM_EMAIL ?? "noreply@example.com",

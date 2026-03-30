@@ -1,38 +1,31 @@
-import Link from "next/link";
-
-const links = [
-  { title: "Training", href: "https://training.example.com", text: "Programs, schedule, booking" },
-  { title: "Materials", href: "https://materials.example.com", text: "Premium Montessori materials" },
-  { title: "Books", href: "https://books.example.com", text: "CEO-authored textbook store" },
-  { title: "Admin Portal", href: "https://admin.example.com", text: "Operations, orders, and CMS" }
-];
+import Image from "next/image";
 
 export function Hero() {
   return (
-    <section className="container glass hero">
-      <span className="badge">⭐ Montessori Edu-Care Ecosystem</span>
-      <h1 className="title">A Premium Montessori Digital Campus for Training, Materials, and Books</h1>
-      <p className="subtitle">
-        Bloom Edu brings consultancy, educator training, premium classroom tools, and authored Montessori textbooks
-        into one elegant platform with dedicated service subdomains.
-      </p>
+    <section className="hero-full">
+      <Image
+        src="/images/hero-montessori.svg"
+        alt="Montessori digital campus"
+        fill
+        priority
+        className="hero-bg"
+      />
 
-      <div style={{ display: "flex", gap: "0.7rem", flexWrap: "wrap", marginTop: "1rem" }}>
-        <Link href="https://training.example.com" className="btn btn-primary">
-          Start Training Journey
-        </Link>
-        <Link href="https://materials.example.com" className="btn btn-secondary">
-          Shop Montessori Materials
-        </Link>
-      </div>
-
-      <div className="grid" style={{ gridTemplateColumns: "repeat(auto-fit,minmax(220px,1fr))", marginTop: "1.5rem" }}>
-        {links.map((item) => (
-          <Link className="card3d" key={item.title} href={item.href}>
-            <h3 style={{ margin: "0 0 0.35rem" }}>{item.title}</h3>
-            <p style={{ margin: 0, color: "var(--muted)" }}>{item.text}</p>
-          </Link>
-        ))}
+      <div className="container hero-content">
+        <span className="badge">Premium Montessori Experience</span>
+        <h1 className="title">A Modern Montessori Platform That Feels Like a Real Brand</h1>
+        <p className="subtitle">
+          Training, e-commerce materials, textbook publishing, and admin operations — all beautifully unified with
+          responsive pages and dedicated subdomains.
+        </p>
+        <div style={{ display: "flex", gap: "0.8rem", flexWrap: "wrap", marginTop: "1rem" }}>
+          <a href="https://training.example.com" className="btn btn-primary">
+            Start Training
+          </a>
+          <a href="https://materials.example.com" className="btn btn-secondary">
+            Explore Materials
+          </a>
+        </div>
       </div>
     </section>
   );
