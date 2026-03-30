@@ -1,0 +1,24 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1600" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2F145D"/>
+      <stop offset="1" stop-color="#7F4DFF"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#fff" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0.08"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="290" cy="180" r="190" fill="#F6C945" fill-opacity="0.45"/>
+  <circle cx="1340" cy="180" r="200" fill="#FFE18E" fill-opacity="0.2"/>
+  <rect x="120" y="220" width="520" height="420" rx="28" fill="url(#card)" stroke="#ffffff" stroke-opacity="0.45"/>
+  <rect x="690" y="130" width="760" height="640" rx="36" fill="url(#card)" stroke="#ffffff" stroke-opacity="0.4"/>
+  <rect x="760" y="230" width="230" height="230" rx="20" fill="#F6C945" fill-opacity="0.82"/>
+  <rect x="1020" y="230" width="340" height="90" rx="12" fill="#fff" fill-opacity="0.82"/>
+  <rect x="1020" y="340" width="340" height="90" rx="12" fill="#fff" fill-opacity="0.65"/>
+  <rect x="1020" y="450" width="260" height="220" rx="12" fill="#fff" fill-opacity="0.82"/>
+  <rect x="1300" y="450" width="60" height="220" rx="12" fill="#FFE18E"/>
+  <text x="180" y="330" fill="#fff" font-family="Inter, Arial" font-size="52" font-weight="700">Montessori</text>
+  <text x="180" y="390" fill="#fff" font-family="Inter, Arial" font-size="52" font-weight="700">Digital Campus</text>
+</svg>
