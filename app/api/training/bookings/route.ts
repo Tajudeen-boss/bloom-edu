@@ -27,7 +27,7 @@ export async function POST(request: Request) {
     sendTransactionalEmail(
       payload.data.email,
       "Training booking received",
-      `<p>Thanks ${payload.data.fullName}, your Montessori training booking is received.</p>`
+      `<p>Thanks ${payload.data.fullName}, your training booking is received.</p>`
     ),
     sendWhatsAppNotification(`New training booking: ${payload.data.fullName} (${payload.data.email})`)
   ]);

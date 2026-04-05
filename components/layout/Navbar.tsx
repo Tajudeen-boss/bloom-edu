@@ -1,23 +1,26 @@
 import Link from "next/link";
+import { navItems } from "@/lib/content/siteContent";
 
 export function Navbar() {
   return (
-    <header className="topbar glass">
+    <header className="topbar">
       <div className="container topbar-inner">
-        <Link href="/" className="brand">
-          Bloom Edu
+        <Link href="/" className="brand" aria-label="Bloom Edu-care home page">
+          <img src="/images/logo.svg" alt="BLOOM EDU-CARE CONSULT (MONTESSORI HUB) logo" className="brand-logo" />
+          <span className="brand-sub">BLOOM EDU-CARE CONSULT (MONTESSORI HUB)</span>
         </Link>
 
-        <nav className="menu">
-          <a href="#about">About</a>
-          <a href="#services">Services</a>
-          <a href="#testimonials">Testimonials</a>
-          <a href="#contact">Contact</a>
+        <nav className="menu" aria-label="Main navigation">
+          {navItems.map((item) => (
+            <a href={item.href} key={item.label} className="menu-link">
+              {item.label}
+            </a>
+          ))}
         </nav>
 
-        <a href="https://training.example.com" className="btn btn-primary">
-          Enroll Now
-        </a>
+        <Link href="/contact" className="btn btn-primary">
+          Book Consultation
+        </Link>
       </div>
     </header>
   );
