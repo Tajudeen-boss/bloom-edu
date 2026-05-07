@@ -19,7 +19,7 @@ export function Navbar() {
         </nav>
 
         <Link href="/contact" className="btn btn-primary">
-          Book Consultation
+          Book a Training
         </Link>
       </div>
     </header>

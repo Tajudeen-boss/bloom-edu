@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { galleryPhotos } from "@/lib/content/siteContent";
 
 const currentYear = new Date().getFullYear();
+const whatsappLink =
+  "https://wa.me/2348130002244?text=Hello%20Bloomeducare,%20I%20would%20like%20to%20make%20an%20enquiry.";
 
 export function Footer() {
   return (
@@ -9,11 +10,11 @@ export function Footer() {
       <div className="container footer-grid">
         <div>
           <img src="/images/logo.svg" alt="BLOOM EDU-CARE CONSULT (MONTESSORI HUB) logo" className="footer-logo" />
-          <p className="footer-kicker">Bloom Edu-care</p>
-          <h3>Top-tier consultancy for schools, educators, and families.</h3>
+          <p className="footer-kicker">Bloomeducare</p>
+          <h3>Raise children who excel in character and academics.</h3>
           <p>
-            We partner with ambitious founders and school leaders to strengthen Montessori and non-Montessori learning
-            environments with measurable classroom outcomes.
+            We support school owners, educators, and parents with practical systems that improve teaching quality and
+            child outcomes.
           </p>
         </div>
 
@@ -40,31 +41,43 @@ export function Footer() {
 
         <div>
           <h4>Contact</h4>
-          <p>Email: partnerships@bloomedu.co</p>
-          <p>Phone: +234 (0) 813 000 2244</p>
-          <p>Hours: Mon-Fri, 9:00 AM - 6:00 PM</p>
+          <p>
+            WhatsApp:{" "}
+            <a href={whatsappLink} target="_blank" rel="noreferrer noopener">
+              +234 (0) 813 000 2244
+            </a>
+          </p>
+          <p>
+            Email: <a href="mailto:partnerships@bloomedu.co">partnerships@bloomedu.co</a>
+          </p>
+          <p>Location: Victoria Island, Lagos, Nigeria</p>
         </div>
 
         <div>
-          <h4>Image Credits</h4>
-          <p>Classroom photos are sourced online from Pexels.</p>
+          <h4>Social Media</h4>
           <ul>
-            {galleryPhotos.slice(0, 3).map((photo) => (
-              <li key={photo.src}>
-                <a href={photo.sourceUrl} target="_blank" rel="noreferrer noopener">
-                  {photo.photographer}
-                </a>
-              </li>
-            ))}
+            <li>
+              <a href="https://instagram.com" target="_blank" rel="noreferrer noopener">
+                Instagram
+              </a>
+            </li>
+            <li>
+              <a href="https://facebook.com" target="_blank" rel="noreferrer noopener">
+                Facebook
+              </a>
+            </li>
+            <li>
+              <a href="https://linkedin.com" target="_blank" rel="noreferrer noopener">
+                LinkedIn
+              </a>
+            </li>
           </ul>
         </div>
       </div>
 
       <div className="container footer-bottom">
         <p>© {currentYear} Bloom Edu-care. All rights reserved.</p>
-        <p>
-          Built for premium educational institutions seeking stronger classroom outcomes and sustainable growth.
-        </p>
+        <p>Raising holistic children through intentional education.</p>
       </div>
     </footer>
   );

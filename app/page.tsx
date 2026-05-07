@@ -1,29 +1,122 @@
-import type { Route } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
-import {
-  blogPosts,
-  credibilityPoints,
-  faqItems,
-  galleryPhotos,
-  heroStats,
-  methodSteps,
-  programs,
-  serviceCards,
-  testimonials
-} from "@/lib/content/siteContent";
+import { galleryPhotos } from "@/lib/content/siteContent";
 
-const featuredPosts = blogPosts.slice(0, 3);
+const whatsappNumber = "2348130002244";
+const whatsappLink =
+  `https://wa.me/${whatsappNumber}` +
+  "?text=Hello%20Bloomeducare,%20I%20want%20to%20transform%20my%20school%20or%20classroom.";
 
-function formatDate(isoDate: string) {
-  return new Intl.DateTimeFormat("en-US", {
-    month: "long",
-    day: "numeric",
-    year: "numeric"
-  }).format(new Date(isoDate));
-}
+const services = [
+  {
+    title: "Teacher Training & Professional Development",
+    intro:
+      "We equip your teachers with the skills they need to confidently manage classrooms and deliver meaningful learning.",
+    points: [
+      "Montessori approach in everyday teaching",
+      "Classroom management strategies",
+      "Child behaviour understanding",
+      "Practical teaching techniques"
+    ],
+    outcome: "More confident, effective, and professional teachers."
+  },
+  {
+    title: "School Growth & Support",
+    intro: "We help you build a school system that stands out and delivers results.",
+    points: [
+      "Montessori integration (regardless of your current setup)",
+      "Curriculum structuring",
+      "Classroom environment setup",
+      "Staff training systems",
+      "School growth strategies"
+    ],
+    outcome: "A structured, reputable, and thriving school."
+  },
+  {
+    title: "Parent Coaching",
+    intro: "We support parents in raising balanced, disciplined, and confident children.",
+    points: [
+      "Understanding child development",
+      "Managing behaviour at home",
+      "Raising independent and responsible children",
+      "Building strong routines"
+    ],
+    outcome: "Peaceful homes and well-guided children."
+  },
+  {
+    title: "Educational Resources",
+    intro: "Access practical tools that support effective teaching and learning.",
+    points: [
+      "Montessori materials",
+      "Early learning resources",
+      "Character-building tools",
+      "Books and affirmation cards"
+    ],
+    outcome: "Better learning experiences with the right materials."
+  }
+];
+
+const signaturePrograms = [
+  {
+    title: "Grace Before Grades (GBG)",
+    intro:
+      "A transformational program designed to help schools raise children with strong character alongside academic excellence.",
+    points: [
+      "Builds discipline, respect, and responsibility",
+      "Easy to integrate into your school timetable",
+      "Practical and classroom-friendly"
+    ],
+    footer: "Perfect for: Schools that want more than just academic results."
+  },
+  {
+    title: "Teacher Transformation Training",
+    intro: "A hands-on training that shifts your teachers from basic teaching to impactful, professional delivery.",
+    points: [
+      "Classroom control without shouting",
+      "Engaging children meaningfully",
+      "Understanding learning differences"
+    ],
+    footer: "Focus Areas designed for real classroom outcomes."
+  },
+  {
+    title: "School Setup & Montessori Infusion",
+    intro:
+      "Starting a school or improving your current system? We guide you step-by-step to build a functional, child-centered learning environment, even with limited resources.",
+    points: [],
+    footer: "Built for schools that want structure, quality, and steady growth."
+  }
+];
+
+const reasonsSchoolsChooseBloomeducare = [
+  "Practical, not theoretical",
+  "Rooted in real classroom experience",
+  "Adaptable to Nigerian school systems",
+  "Focused on both character and academics",
+  "Proven strategies that deliver visible results"
+];
+
+const clientResults = [
+  "Improved teacher performance",
+  "Better classroom management",
+  "Increased parent satisfaction",
+  "Noticeable child development",
+  "Stronger school structure and reputation"
+];
+
+const insightTopics = [
+  "Montessori in real classrooms",
+  "Handling children's behaviour",
+  "Building strong school systems",
+  "Raising readers and independent children"
+];
+
+const socialLinks = [
+  { label: "Instagram", href: "https://instagram.com" },
+  { label: "Facebook", href: "https://facebook.com" },
+  { label: "LinkedIn", href: "https://linkedin.com" }
+];
 
 export default function HomePage() {
   return (
@@ -33,44 +126,42 @@ export default function HomePage() {
       <section className="hero-section section-padding">
         <div className="container hero-grid">
           <div className="hero-copy fade-up">
-            <p className="eyebrow">Top-Tier Educational Consultancy Agency</p>
-            <h1>We Build High-Performing Schools and Learning Programs With Real Results.</h1>
+            <p className="eyebrow">Bloomeducare</p>
+            <h1>Raise Children Who Excel in Character and Academics</h1>
             <p>
-              Bloom Edu-care partners with founders, school leaders, and educator teams across Montessori and
-              non-Montessori settings. From classroom setup to training, leadership coaching, and family partnership,
-              we help you build a trusted educational brand.
+              We help school owners, educators, and parents build effective early years systems using practical
+              Montessori and child-centered strategies.
+            </p>
+            <p>
+              From teacher training to school growth and educational resources, Bloomeducare equips you with what
+              truly works in today&apos;s classroom.
             </p>
             <div className="action-row">
               <Link href="/contact" className="btn btn-primary">
-                Book a Strategy Call
+                Book a Training
               </Link>
-              <Link href="/about" className="btn btn-secondary">
-                Explore Our Approach
+              <Link href="/books" className="btn btn-secondary">
+                Explore Resources
               </Link>
-            </div>
-            <div className="stats-grid" role="list" aria-label="Bloom Edu-care impact metrics">
-              {heroStats.map((stat) => (
-                <article key={stat.label} className="stat-card" role="listitem">
-                  <strong>{stat.value}</strong>
-                  <span>{stat.label}</span>
-                </article>
-              ))}
+              <a href={whatsappLink} className="btn btn-whatsapp" target="_blank" rel="noreferrer noopener">
+                Chat on WhatsApp
+              </a>
             </div>
           </div>
 
           <article className="hero-image-card fade-up">
             <Image
               src={galleryPhotos[0].src}
-              alt={galleryPhotos[0].alt}
+              alt="Bloomeducare training and classroom practice session"
               width={1200}
               height={900}
               priority
               className="cover-image"
             />
             <div className="hero-image-caption">
-              <p>Active classroom learning in action</p>
+              <p>Transforming classrooms through practical, child-centered support.</p>
               <a href={galleryPhotos[0].sourceUrl} target="_blank" rel="noreferrer noopener">
-                Source: {galleryPhotos[0].sourceLabel}
+                Photo source
               </a>
             </div>
           </article>
@@ -80,9 +171,37 @@ export default function HomePage() {
       <section className="section-padding section-compact">
         <div className="container">
           <div className="trust-banner fade-up">
-            {credibilityPoints.map((point) => (
-              <p key={point}>{point}</p>
-            ))}
+            <p>Trusted by schools, educators, and parents across Nigeria.</p>
+            <p>Transforming classrooms. Strengthening teachers. Raising holistic children.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-padding section-tint" id="about">
+        <div className="container">
+          <div className="section-head fade-up">
+            <p className="eyebrow">About Bloomeducare</p>
+            <h2>We Are Raising a New Standard for Early Years Education</h2>
+          </div>
+          <div className="about-copy fade-up">
+            <p>
+              Bloomeducare was born from real classroom experience and a deep understanding of what children truly
+              need to thrive.
+            </p>
+            <p>
+              Many schools struggle with outdated teaching methods, untrained educators, and systems that do not
+              support the whole child. The result is children who may pass exams but lack confidence, discipline, and
+              strong character.
+            </p>
+            <p>At Bloomeducare, we bridge that gap.</p>
+            <p>
+              We work with school owners, educators, and parents to implement practical, effective, and child-centered
+              approaches rooted in Montessori principles and global best practices.
+            </p>
+            <p>
+              With experience as classroom teachers, school leaders, and Montessori trainers, we do not just teach
+              theory. We provide solutions that work in real classrooms.
+            </p>
           </div>
         </div>
       </section>
@@ -90,75 +209,23 @@ export default function HomePage() {
       <section className="section-padding" id="services">
         <div className="container">
           <div className="section-head fade-up">
-            <p className="eyebrow">Core Services</p>
-            <h2>Everything You Need to Launch, Strengthen, and Scale.</h2>
-            <p>
-              Our consultancy supports each stage of your school journey with practical systems, not just theory. We
-              combine strategic planning with implementation support your team can sustain.
-            </p>
+            <p className="eyebrow">What We Do</p>
+            <h2>How We Support You</h2>
           </div>
 
           <div className="card-grid service-grid-xl">
-            {serviceCards.map((service) => (
+            {services.map((service) => (
               <article key={service.title} className="surface-card fade-up">
                 <h3>{service.title}</h3>
-                <p>{service.description}</p>
-                <Link href={service.href as Route} className="text-link">
-                  Learn more
-                </Link>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section-padding section-tint" id="about">
-        <div className="container two-column-split">
-          <div className="fade-up">
-            <p className="eyebrow">Why Schools Choose Bloom Edu-care</p>
-            <h2>Consultancy Built for Leaders Who Care About Learning Quality Across Models.</h2>
-            <p>
-              We are not a slide-deck consultancy. We work alongside your team in the realities of school operations:
-              timetables, classrooms, staffing constraints, parent expectations, and measurable outcomes.
-            </p>
-            <p>
-              Our clients come to us for long-term excellence, not quick fixes. We help build environments where
-              children concentrate deeply, teachers teach confidently, and leadership can scale without losing quality.
-            </p>
-            <Link href="/about" className="btn btn-secondary">
-              Read Our Story
-            </Link>
-          </div>
-          <article className="image-stack fade-up">
-            <Image
-              src={galleryPhotos[3].src}
-              alt={galleryPhotos[3].alt}
-              width={1200}
-              height={900}
-              className="cover-image"
-            />
-            <Image
-              src={galleryPhotos[1].src}
-              alt={galleryPhotos[1].alt}
-              width={1200}
-              height={900}
-              className="cover-image floating-image"
-            />
-          </article>
-        </div>
-      </section>
-
-      <section className="section-padding">
-        <div className="container">
-          <div className="section-head fade-up">
-            <p className="eyebrow">Our Method</p>
-            <h2>A Structured Delivery Model That Keeps Progress Visible.</h2>
-          </div>
-          <div className="card-grid method-grid">
-            {methodSteps.map((step) => (
-              <article key={step.title} className="surface-card fade-up">
-                <p className="step-pill">{step.title}</p>
-                <p>{step.detail}</p>
+                <p>{service.intro}</p>
+                <ul>
+                  {service.points.map((point) => (
+                    <li key={point}>{point}</li>
+                  ))}
+                </ul>
+                <p className="result-line">
+                  <strong>Outcome:</strong> {service.outcome}
+                </p>
               </article>
             ))}
           </div>
@@ -168,52 +235,40 @@ export default function HomePage() {
       <section className="section-padding section-tint">
         <div className="container">
           <div className="section-head fade-up">
-            <p className="eyebrow">Programs</p>
-            <h2>Signature Learning Pathways for Teachers and Leaders.</h2>
+            <p className="eyebrow">Signature Programs</p>
+            <h2>Our Signature Solutions</h2>
           </div>
+
           <div className="card-grid program-grid">
-            {programs.map((program) => (
+            {signaturePrograms.map((program) => (
               <article key={program.title} className="surface-card fade-up">
                 <h3>{program.title}</h3>
-                <p>
-                  <strong>Audience:</strong> {program.audience}
-                </p>
-                <p>
-                  <strong>Format:</strong> {program.format}
-                </p>
-                <p>
-                  <strong>Duration:</strong> {program.duration}
-                </p>
-                <p>
-                  <strong>Outcome:</strong> {program.outcome}
-                </p>
+                <p>{program.intro}</p>
+                {program.points.length > 0 ? (
+                  <ul>
+                    {program.points.map((point) => (
+                      <li key={point}>{point}</li>
+                    ))}
+                  </ul>
+                ) : null}
+                <p className="result-line">{program.footer}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="section-padding" aria-labelledby="gallery-title">
+      <section className="section-padding">
         <div className="container">
           <div className="section-head fade-up">
-            <p className="eyebrow">Classroom Gallery</p>
-            <h2 id="gallery-title">Teachers and Children Learning Through Hands-On Materials.</h2>
-            <p>
-              A visual look at guided independence and teacher-supported learning routines across early years classroom
-              settings.
-            </p>
+            <p className="eyebrow">Why Bloomeducare</p>
+            <h2>Why Schools Choose Bloomeducare</h2>
           </div>
-          <div className="gallery-grid">
-            {galleryPhotos.map((photo) => (
-              <figure key={photo.src} className="gallery-item fade-up">
-                <Image src={photo.src} alt={photo.alt} width={1200} height={900} className="cover-image" />
-                <figcaption>
-                  <span>{photo.caption}</span>
-                  <a href={photo.sourceUrl} target="_blank" rel="noreferrer noopener">
-                    {photo.photographer} via {photo.sourceLabel}
-                  </a>
-                </figcaption>
-              </figure>
+          <div className="card-grid value-grid">
+            {reasonsSchoolsChooseBloomeducare.map((reason) => (
+              <article key={reason} className="surface-card fade-up">
+                <p>{reason}</p>
+              </article>
             ))}
           </div>
         </div>
@@ -222,82 +277,123 @@ export default function HomePage() {
       <section className="section-padding section-tint" id="testimonials">
         <div className="container">
           <div className="section-head fade-up">
-            <p className="eyebrow">Testimonials</p>
-            <h2>Leaders Trust Us to Deliver Classroom Transformation.</h2>
+            <p className="eyebrow">Results</p>
+            <h2>What Our Clients Experience</h2>
           </div>
-          <div className="card-grid testimonial-grid">
-            {testimonials.map((testimonial) => (
-              <article key={testimonial.author} className="surface-card fade-up">
-                <p className="quote">“{testimonial.quote}”</p>
-                <p className="author">{testimonial.author}</p>
-                <p className="role">{testimonial.role}</p>
-              </article>
-            ))}
-          </div>
+          <article className="surface-card fade-up">
+            <p>Our clients report:</p>
+            <ul>
+              {clientResults.map((result) => (
+                <li key={result}>{result}</li>
+              ))}
+            </ul>
+            <p className="result-line">
+              <em>Add real testimonials here as you gather them.</em>
+            </p>
+          </article>
         </div>
       </section>
 
       <section className="section-padding">
         <div className="container">
           <div className="section-head fade-up">
-            <p className="eyebrow">From Our Blog</p>
-            <h2>Ideas, Playbooks, and Practical Advice for School Improvement.</h2>
+            <p className="eyebrow">Insights</p>
+            <h2>Learn, Grow, and Lead Better</h2>
+            <p>
+              We share practical insights to help you become more effective in your role as a school owner, educator,
+              or parent.
+            </p>
           </div>
-          <div className="card-grid blog-grid">
-            {featuredPosts.map((post) => (
-              <article key={post.slug} className="surface-card fade-up">
-                <Image src={post.coverImage} alt={post.title} width={1200} height={800} className="cover-image" />
-                <div className="meta-row">
-                  <span>{post.category}</span>
-                  <span>{formatDate(post.date)}</span>
-                </div>
-                <h3>{post.title}</h3>
-                <p>{post.excerpt}</p>
-                <Link href={`/blog/${post.slug}` as Route} className="text-link">
-                  Read article
-                </Link>
+          <div className="card-grid value-grid">
+            {insightTopics.map((topic) => (
+              <article key={topic} className="surface-card fade-up">
+                <p>{topic}</p>
               </article>
             ))}
           </div>
           <div className="section-cta fade-up">
             <Link href="/blog" className="btn btn-secondary">
-              View All Posts
+              Explore Insights
             </Link>
           </div>
         </div>
       </section>
 
       <section className="section-padding section-tint">
-        <div className="container faq-wrap">
+        <div className="container">
+          <article className="cta-banner fade-up">
+            <h2>Ready to Transform Your School or Classroom?</h2>
+            <p>Stop struggling with ineffective systems and untrained staff.</p>
+            <p>
+              Let us help you build a school that delivers both character and academic excellence.
+            </p>
+            <div className="action-row">
+              <Link href="/contact" className="btn btn-primary">
+                Book a Consultation
+              </Link>
+              <Link href="/training" className="btn btn-secondary">
+                Join Our Next Training
+              </Link>
+              <Link href="/books" className="btn btn-secondary">
+                Shop Resources
+              </Link>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section className="section-padding" id="contact">
+        <div className="container">
           <div className="section-head fade-up">
-            <p className="eyebrow">Frequently Asked Questions</p>
-            <h2>Everything You Need Before Partnering With Us.</h2>
+            <p className="eyebrow">Contact</p>
+            <h2>Let&apos;s Work Together</h2>
+            <p>
+              Whether you are a school owner, educator, or parent, Bloomeducare is here to support your journey.
+            </p>
           </div>
-          <div className="faq-list">
-            {faqItems.map((item) => (
-              <details key={item.question} className="faq-item fade-up">
-                <summary>{item.question}</summary>
-                <p>{item.answer}</p>
-              </details>
-            ))}
+          <div className="card-grid value-grid">
+            <article className="surface-card fade-up">
+              <h3>Reach Us</h3>
+              <p>
+                <strong>WhatsApp:</strong>{" "}
+                <a href={whatsappLink} target="_blank" rel="noreferrer noopener">
+                  +234 (0) 813 000 2244
+                </a>
+              </p>
+              <p>
+                <strong>Email:</strong>{" "}
+                <a href="mailto:partnerships@bloomedu.co">partnerships@bloomedu.co</a>
+              </p>
+              <p>
+                <strong>Location:</strong> Victoria Island, Lagos, Nigeria
+              </p>
+              <div className="action-row">
+                <a href={whatsappLink} className="btn btn-whatsapp" target="_blank" rel="noreferrer noopener">
+                  Message Us on WhatsApp
+                </a>
+              </div>
+            </article>
+
+            <article className="surface-card fade-up">
+              <h3>Social Media</h3>
+              <p>Follow Bloomeducare for practical classroom tips, updates, and training announcements.</p>
+              <ul>
+                {socialLinks.map((social) => (
+                  <li key={social.label}>
+                    <a href={social.href} target="_blank" rel="noreferrer noopener">
+                      {social.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </article>
           </div>
         </div>
       </section>
 
-      <section className="section-padding">
-        <div className="container">
-          <article className="cta-banner fade-up">
-            <h2>Ready to Build a Top-Tier School Experience?</h2>
-            <p>
-              Book a strategy call with our consultancy team and get a practical roadmap for your classrooms,
-              leadership systems, and teacher development plan.
-            </p>
-            <Link href="/contact" className="btn btn-primary">
-              Schedule Consultation
-            </Link>
-          </article>
-        </div>
-      </section>
+      <a href={whatsappLink} className="whatsapp-float" target="_blank" rel="noreferrer noopener">
+        WhatsApp Us
+      </a>
 
       <Footer />
     </main>
